@@ -1,44 +1,34 @@
-# SignNet 
-Trafik İşareti Tanıma ve Sınıflandırma Sistemi (CNN Tabanlı)
+# Trafik İşareti Tanıma Uygulaması (Traffic Sign Classifier)
 
-## Proje Açıklaması
-SignNet, Alman Trafik İşaretleri Benchmark (GTSRB) veri seti üzerinde eğitilmiş bir derin öğrenme modelidir. Bu proje, trafik işareti görüntülerini sınıflandırmak için Convolutional Neural Network (CNN) mimarisi kullanır.
+Bu uygulama, kullanıcıdan alınan trafik işareti görselini analiz ederek hangi trafik işareti olduğunu tahmin eder.  
+Eğitimde GTSRB (German Traffic Sign Recognition Benchmark) veri seti kullanılmıştır ve model Keras ile eğitilmiştir.
+dataset:https://www.kaggle.com/datasets/meowmeowmeowmeowmeow/gtsrb-german-traffic-sign/data
+---
 
-##  Kullanılan Teknolojiler
-- Python
-- TensorFlow / Keras
-- NumPy
-- OpenCV
-- Matplotlib
-- Google Colab
-- Kaggle API
+##  Örnek
 
-##  Veri Seti
-- **Alman Trafik İşaretleri Benchmark (GTSRB)**
-- Eğitim Verisi: 31,367 görüntü
-- Test Verisi: 7,842 görüntü
-- Toplam: 39,209 görüntü
+![Uygulama Arayüzü](https://imgur.com/a/7M3t5Kk) 
 
-Veri Kaggle API kullanılarak doğrudan Google Colab ortamına çekilmektedir.
+---
 
-##  Model Mimarisi
-- 2 x Conv2D (32 ve 64 filtre, ReLU aktivasyon)
-- MaxPooling2D (2x2)
-- Dropout (%25) – Overfitting'i önlemek için
-- Flatten + Dense
-- Softmax çıkış katmanı (43 sınıf)
+##  Özellikler
 
-## Eğitim Sonuçları
-Modelin eğitim sürecinde:
-- Accuracy (Doğruluk)
-- Loss (Kayıp)  
-grafikleri görselleştirilerek kullanıcıya sunulmuştur.
+-  CNN tabanlı trafik işareti sınıflandırma modeli
+-  Görsel yükleyerek gerçek zamanlı tahmin
+-  Tahmin sonucu ve güven skoru (%)
+-  Streamlit tabanlı kullanıcı dostu arayüz
 
-##  İnference (Tahmin)
-Model, `traffic_sign_model.h5` olarak kaydedilir ve test görüntüleri üzerinde tahmin yapmak için aşağıdaki fonksiyon kullanılır:
+---
 
-```python
-predict_image("ornek_resim.png")
+##  Model Bilgisi
 
-Fonksiyon çıkarım için görüntü dosyasını girdi olarak alacak, ilgili sınıf etiketini (label) ve olasılık değerini geri dönecektir. 
-# Çıktı: ('Sınıf 14', 97.3)
+- Model: 6 katmanlı ConvNet
+- Girdi Boyutu: 50x50 px
+- Çıkış: 43 trafik işareti sınıfı
+- Format: `traffic_sign_model.keras`
+
+> Eğitilmiş model Colab üzerinde oluşturulmuş ve bu projeye dahil edilmiştir.
+
+---
+
+
