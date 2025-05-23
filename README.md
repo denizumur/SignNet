@@ -7,7 +7,8 @@ dataset:https://www.kaggle.com/datasets/meowmeowmeowmeowmeow/gtsrb-german-traffi
 
 ##  Örnek
 
-![Uygulama Arayüzü](https://imgur.com/a/7M3t5Kk) 
+![Uygulama Ekran Görüntüsü](https://imgur.com/a/dFYTN78)
+
 
 ---
 
